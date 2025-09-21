@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Thanks — GlobalHire{% endblock %}
+{% block content %}
+<section class="success-section">
+  <div class="success-card">
+    <h2>Thanks, {{ name }}!</h2>
+    <p>Your application has been sent. We'll review it and contact you if there's a fit.</p>
+    <a class="btn" href="{{ url_for('home') }}">Back to Home</a>
+  </div>
+</section>
+{% endblock %}
