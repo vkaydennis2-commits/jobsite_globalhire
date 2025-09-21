@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Apply — GlobalHire{% endblock %}
+{% block content %}
+<section class="form-section">
+  <div class="form-card">
+    <h2>Get Started — Application</h2>
+    <p>Fill your details below. We'll review and contact you.</p>
+    <form method="POST" class="app-form" enctype="multipart/form-data">
+      <div class="row">
+        <input type="text" name="first_name" placeholder="First name" required>
+        <input type="text" name="last_name" placeholder="Last name" required>
+      </div>
+      <div class="row">
+        <input type="date" name="dob" placeholder="Date of Birth" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+      </div>
+      <div class="row">
+        <input type="email" name="email" placeholder="Email address" required>
+        <input type="text" name="country" placeholder="Country" required>
+      </div>
+      <div class="row">
+        <select name="education" required>
+          <option value="">Education level</option>
+          <option>High School</option>
+          <option>Diploma</option>
+          <option>Bachelor's</option>
+          <option>Master's</option>
+          <option>Other</option>
+        </select>
+        <input type="number" name="experience" placeholder="Years of experience" min="0">
+      </div>
+      <div class="row">
+        <select name="job_type" required>
+          <option value="">Preferred job category</option>
+          <option>Healthcare</option>
+          <option>Hospitality</option>
+          <option>Construction</option>
+          <option>Driving/Logistics</option>
+          <option>Domestic Work</option>
+          <option>Other</option>
+        </select>
+        <input type="text" name="preferred" placeholder="What kind of job would you want?">
+      </div>
+      <div class="row">
+        <label class="file-label">Upload Resume (PDF, DOC, DOCX, max 5MB)
+          <input type="file" name="resume" accept=".pdf,.doc,.docx">
+        </label>
+      </div>
+      <div class="row">
+        <textarea name="message" placeholder="Short cover note (optional)"></textarea>
+      </div>
+      <div class="row actions">
+        <button class="btn" type="submit">Submit Application</button>
+        <a class="btn ghost" href="{{ url_for('home') }}">Cancel</a>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}
